@@ -6,15 +6,14 @@ const HEIGHT = canvas.height
 
 let T = 12;
 
-// ctx.clearRect(10, 10, 50, 50)
 
 ctx.fillStyle = "rgb(203, 157, 63)";
 ctx.shadowBlur = 10;
 ctx.shadowColor = "rgb(20,20,20)";
 
 
-var Meanx = 0; // Define Meanx globally
-var Meany = 0; // Define Meany globally
+var Meanx = 0; 
+var Meany = 0; 
 
 function updateMean() {
     fetch('/mean')
@@ -22,18 +21,11 @@ function updateMean() {
         .then(data => {
             Meanx = data.Meanx; // Update global Meanx variable
             Meany = data.Meany; // Update global Meany variable
-            // Use Meanx and Meany for further processing
         })
         .catch(error => console.error('Error fetching mean:', error));
 }
 
-// Call updateMean function periodically
-setInterval(updateMean, 100); // Update every 100 milliseconds
-
-
-// canvas.js
-
-// Function to parse query parameters from URL
+setInterval(updateMean, 100); 
 
 
 
@@ -188,8 +180,6 @@ setInterval(function(){
 
 
 
-// Call the main function when the document is loaded
-// document.addEventListener("DOMContentLoaded", main);
 
 
 
